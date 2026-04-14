@@ -1,0 +1,22 @@
+# mac
+.DS_Store
+
+.vscode
+
+
+# 开发配置
+conf/dev.yaml
+conf/prod.yaml
+conf/config.yaml
+
+# 日志
+logs/
+*.log
+
+# 临时文件
+tmp/
+*.tmp
+
+# doc
+doc/
+docs/

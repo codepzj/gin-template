@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  gin-template:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gin-template
+    ports:
+      - 2574:2574
+    volumes:
+      - ./conf/config.yaml:/app/conf/config.yaml
+      - ./logs:/app/logs
+    environment:
+      - TZ=Asia/Shanghai
