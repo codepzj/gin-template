@@ -1,3 +1,3 @@
-# note-server
+# gin-template
 
-ai知识库后端
+一个gin模版
