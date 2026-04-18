@@ -1,14 +1,11 @@
 module github.com/codepzj/gin-template
 
-go 1.24.3
+go 1.24.0
 
 require (
-	git.disoms.net/shared-libs/go-lib v1.13.1
-	github.com/codepzj/go-lib v1.0.1
 	github.com/gin-gonic/gin v1.10.1
 	github.com/google/wire v0.6.0
 	github.com/spf13/viper v1.21.0
-	go.uber.org/zap v1.27.1
 	gorm.io/driver/mysql v1.5.7
 	gorm.io/gorm v1.25.7
 )
@@ -20,10 +17,8 @@ require (
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/rogpeppe/go-internal v1.12.0 // indirect
-	go.uber.org/multierr v1.11.0 // indirect
 	go.yaml.in/yaml/v3 v3.0.4 // indirect
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
-	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
 )
 
 require (

@@ -4,7 +4,6 @@ import (
 	"flag"
 	"log"
 
-	"git.disoms.net/shared-libs/go-lib/logger"
 	"github.com/codepzj/gin-template/conf"
 )
 
@@ -19,14 +18,6 @@ func main() {
 
 	// 根据环境读取配置文件
 	config := conf.GetConfig(*CfgPath)
-
-	err := logger.Init(logger.Config{
-		Level:  config.Log.Level,
-		Format: config.Log.Format,
-	})
-	if err != nil {
-		log.Fatalf("failed to initialize logger: %v", err)
-	}
 
 	server, err := wireApp(config)
 	if err != nil {

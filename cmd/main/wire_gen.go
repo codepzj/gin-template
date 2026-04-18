@@ -12,18 +12,16 @@ import (
 	"github.com/codepzj/gin-template/internal/repository"
 	"github.com/codepzj/gin-template/internal/server"
 	"github.com/codepzj/gin-template/internal/service"
-	"github.com/codepzj/gin-template/pkg/middleware"
 )
 
 // Injectors from wire.go:
 
 // wireApp 初始化应用
 func wireApp(cfg *conf.Config) (*server.HttpServer, error) {
-	commonMiddleware := middleware.NewCommonMiddleware()
 	data := repository.NewData()
 	serviceService := service.NewService(data)
 	handlerHandler := handler.NewHandler(serviceService)
-	ginEngine := server.NewGin(commonMiddleware, handlerHandler)
+	ginEngine := server.NewGin(handlerHandler)
 	httpServer := server.NewHttpServer(ginEngine, cfg)
 	return httpServer, nil
 }

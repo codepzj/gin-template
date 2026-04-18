@@ -6,7 +6,6 @@ import (
 
 	"github.com/codepzj/gin-template/conf"
 	"github.com/codepzj/gin-template/internal/handler"
-	"github.com/codepzj/gin-template/pkg/middleware"
 	"github.com/gin-gonic/gin"
 )
 
@@ -19,7 +18,7 @@ type GinEngine struct {
 	engine *gin.Engine
 }
 
-func NewGin(commonMiddleware *middleware.CommonMiddleware, h *handler.Handler) *GinEngine {
+func NewGin(h *handler.Handler) *GinEngine {
 	engine := gin.Default()
 
 	h.Register(engine)

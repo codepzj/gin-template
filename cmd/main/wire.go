@@ -9,7 +9,6 @@ import (
 	"github.com/codepzj/gin-template/internal/repository"
 	"github.com/codepzj/gin-template/internal/server"
 	"github.com/codepzj/gin-template/internal/service"
-	"github.com/codepzj/gin-template/pkg/middleware"
 	"github.com/google/wire"
 )
 
@@ -20,6 +19,5 @@ func wireApp(cfg *conf.Config) (*server.HttpServer, error) {
 		handler.ProviderSet,
 		service.ProviderSet,
 		repository.ProviderSet,
-		middleware.ProviderSet,
 	))
 }

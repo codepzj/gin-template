@@ -2,12 +2,11 @@ package db
 
 import (
 	"log"
+	"log/slog"
 	"os"
 	"time"
 
 	"github.com/codepzj/gin-template/conf"
-	"github.com/codepzj/go-lib/logger"
-	"go.uber.org/zap"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	glogger "gorm.io/gorm/logger"
@@ -30,11 +29,11 @@ func NewDB(cfg *conf.Mysql) *gorm.DB {
 		}},
 	)
 	if err != nil {
-		logger.Error("Connect MySQL failed", zap.Error(err))
+		slog.Error("mysql connect failed", "err", err)
 		panic(err)
 	}
 
-	logger.Info("MySQL connect success...")
+	slog.Info("mysql connect success...")
 	return db
 }
 
