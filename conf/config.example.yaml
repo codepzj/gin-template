@@ -1,7 +1,11 @@
 port: 2574 # 服务端口
 
+log:
+  format: console # console/json
+  level: info # debug/info/warn/error
+
 mysql:
-  dsn: "root:123456@tcp(localhost:23306)/note?charset=utf8mb4&parseTime=True&loc=Local"
+  dsn: "<username>:<password>@tcp(<host>:<port>)/<database>?charset=utf8mb4&parseTime=True&loc=UTC"
   slow_sql_threshold: 200 # 慢查询日志,单位ms
   log_level: info # silent/error/warn/info
 

@@ -1,4 +1,4 @@
-.PHONY: help gen fmt wire
+.PHONY: help gen fmt
 
 run: # Run the application
 	go run cmd/api/main.go -cfg_path=./conf/config.yaml
@@ -11,6 +11,3 @@ gen: # Generate code
 
 fmt: # Format code
 	go fmt ./...
-
-wire: # Generate dependency injection code
-	wire ./cmd/main

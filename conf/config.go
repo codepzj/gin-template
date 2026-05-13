@@ -3,6 +3,7 @@ package conf
 import (
 	"log"
 
+	"github.com/codepzj/gin-template/pkg/logger"
 	"github.com/spf13/viper"
 )
 
@@ -23,8 +24,13 @@ type Mysql struct {
 
 // Log日志配置
 type Log struct {
-	Format string `mapstructure:"format"` // 环境 console json
-	Level  string `mapstructure:"level"`  // 日志级别
+	Format logger.LogFormat `mapstructure:"format"` // 环境 console json
+	Level  logger.LogLevel  `mapstructure:"level"`  // 日志级别
+	Output struct {
+		EnableFile bool   `mapstructure:"enable_file"`
+		FilePath   string `mapstructure:"file_path"`
+		MaxAge     int    `mapstructure:"max_age"`
+	} `mapstructure:"output"`
 }
 
 // GetConfig loads and returns the application configuration

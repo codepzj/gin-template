@@ -7,15 +7,15 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type Handler struct {
-	svc *service.Service
+type HealthHandler struct {
+	svc *service.HealthService
 }
 
-func NewHandler(svc *service.Service) *Handler {
-	return &Handler{svc: svc}
+func NewHealthHandler(svc *service.HealthService) *HealthHandler {
+	return &HealthHandler{svc: svc}
 }
 
-func (h *Handler) Register(engine *gin.Engine) {
+func (h *HealthHandler) Register(engine *gin.Engine) {
 	engine.GET("/health", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"status": "ok"})
 	})
